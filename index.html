@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystals Collector</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/reset.css">
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css">
+	<link rel = "stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+	<div>
+		<h1>Title</h1>
+		<p>Instructions for playing</p>
+	</div>
+	<div id = "gameContainer">
+		<button class = "crystals"><img id = "yellow" src="assets/images/yellow.jpeg" alt = "yellowGem"></button>
+		<button class = "crystals"><img id = "blue" src="assets/images/blue.png" alt = "blueGem"></button>
+		<button class = "crystals"><img id = "green" src="assets/images/green.jpeg" alt = "greenGem"></button>
+		<button class = "crystals"><img id = "red" src="assets/images/red.jpeg" alt = "redGem"></button>
+	</div>
+
+	<div id = "numbers">
+		<h1 class = "">The number to match is: <span id = "random">39</span></h1>
+		<h1 class = "">User score: <span id="user"> </span></h1>
+	</div>
+	<div id = "scoreboard">
+		<h1 id = "wins">Wins:</h1>
+		<h1 id = "losses">Losses: </h1>
+	</div>
+</body>
+<script>
+
+
+
+$(document).ready(function() {
+	var computerNumber = Math.floor((Math.random()*120) + 19);
+	var userScore = 0;
+	var clickCrystal = Math.floor((Math.random()*12) + 1);
+	var crystals = ["yellow", "blue", "green", "red"];
+
+
+	$("#random").text(computerNumber);
+
+	for (i=0; i<crystals.length; i++) {
+		var crystal = "#" + crystals[i]
+		$(crystal).data('value', Math.floor(Math.random()*12) +1);
+		$("#user").text(userScore);
+		// userScore = userScore + Math.floor((Math.random()*12) + 1);
+
+	}
+	// start a game, get a random number for targetScore
+});
+
+</script>
+
+
+</html>
