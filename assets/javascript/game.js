@@ -3,6 +3,8 @@ $( document ).ready(function() {
 	var numberToGuess = 53;
 	var counter = 0;
 	var numbers = [10, 5, 3, 7];
+	var win = 0;
+	var loss = 0;
 
 	$("#number").text(numberToGuess);
 
@@ -25,11 +27,19 @@ $( document ).ready(function() {
 			$("#yourNumber").text(counter);
 
 			if (counter == numberToGuess) {
-				alert('You won! The it is 50!');
+				alert('Congratulations! You won!');
+				win++;
+				$("#wins").append(win);
+				$("#yourNumber").empty(); 
+				counter = 0;
 			}
 			else if (counter > numberToGuess) {
-				alert('You lost!');
-				counter = 0;
+				alert('You lost!'); 
+				loss++;
+				$("#losses").append(loss);
+				$("#yourNumber").empty(); 
+				counter = 0;//this should be here; once I make the array a random number
+				
 		};
 	});
 });
