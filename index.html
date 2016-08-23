@@ -2,76 +2,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Crystals Collector</title>
-	<link type="text/css" rel="stylesheet" href="assets/css/reset.css">
-	<link type="text/css" rel="stylesheet" href="assets/css/style.css">
-	<link rel = "stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery.js"></script>
-
+	<title>Crystals Collector</title>	
+		<link type="text/css" rel="stylesheet" href="assets/css/reset.css">
+		<link type="text/css" rel="stylesheet" href="assets/css/style.css">
+		<link rel = "stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">	
 </head>
 <body>
-	<div>
-		<h1>Title</h1>
-		<p>Instructions for playing</p>
+	<div class="page-header">
+  		<h1>Crystals Collector <small></small></h1>
 	</div>
-	<div id = "gameContainer">
-		<button class = "crystals"><img id = "yellow" src="assets/images/yellow.jpeg" alt = "yellowGem"></button>
-		<button class = "crystals"><img id = "blue" src="assets/images/blue.png" alt = "blueGem"></button>
-		<button class = "crystals"><img id = "green" src="assets/images/green.jpeg" alt = "greenGem"></button>
-		<button class = "crystals"><img id = "red" src="assets/images/red.jpeg" alt = "redGem"></button>
+
+	
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Instructions to play</h3>
+  </div>
+  		<div class="panel-body">
+		    You will be given a random number at the start of the game. 
+		    <br>
+		    There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+		    <br>
+		    <br>
+		    You win the game by matching your total score to the random displayed. You lose the game if your total score goes above the random number.
+		    <br>
+		    The value of each crystal is hidden from you until you click on it.
+		    <br>
+		    Each time when the game starts, each crystal's value is changed, as well as the random number.
+  		</div>
+ </div>
+
+  	<div id = "crystals">
+			<!-- <img src="assets/images/yellow.jpeg" alt="yellowGem" class="img-rounded crystalImage " height="150">
+			<img src="assets/images/blue.png" alt="blueGem" class="img-rounded crystalImage" height="110">
+			<img src="assets/images/images.jpeg" alt="greenGem" class="img-rounded crystalImage" height="110">
+			<img src="assets/images/red.jpeg" alt = "redGem" class="img-rounded crystalImage" height="110"> -->
 	</div>
+
+	
 
 	<div id = "numbers">
-		<h1 class = "">The number to match is: <span id = "random">39</span></h1>
-		<h1 class = "">User score:<span id="user"></span></h1>
+		<h2 class = "">Random number: <span id = "number">39</span></h2>
+		<h2 class = "">Your total score: <span id="yourNumber"></span></h2>
 	</div>
-	<div id = "scoreboard">
-		<h1 id = "wins">Wins:</h1>
-		<h1 id = "losses">Losses: </h1>
-	</div>
-</body>
-<script>
-
-
-
-$(document).ready(function() {
-	var computerNumber = Math.floor((Math.random()*120) + 1);
-	var userScore = 0;
-	var crystal1 = Math.floor((Math.random()*12) + 1);
-	var crystal2 = Math.floor((Math.random()*12) + 1);
-	var crystal3 = Math.floor((Math.random()*12) + 1);
-	var crystal4 = Math.floor((Math.random()*12) + 1);
 	
-	//assign randomly to each crystal
+	<div id = "scoreboard">
+		<h2 id = "wins">Wins:</h2>
+		<h2 id = "losses">Losses: </h2>
+	</div>
 
-
-	$("#random").text(computerNumber);
-
-	$("#yellow").on("click", function() {
-		var userScore = 0;
-		$("#user").text(crystal1);
-		userScore = userScore + crystal1;
-
-	});
-
-	$("#blue").on("click", function() {
-		$("#user").text(crystal2);
-		userScore = userScore + crystal2;
-
-});
-
-	$("#green").on("click", function() {
-		$("#user").text(crystal3);
-		userScore = userScore + crystal3;
-	})
-
-
-	$("#red").on("click", function() {
-		$("#user").text(crystal4);
-		userScore = userScore + crystal4;
-	})
-
-});
-
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="assets/javascript/game.js">
+	alert('hi'); //test for javascript
 </script>
+
+</body>
 </html>

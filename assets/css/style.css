@@ -1,5 +1,15 @@
+.crystalImage {
 
-.crystals {
-	width: 20%;
-	height: 20%;
+}
+
+
+#crystals {
+	text-align: center;
+
+}
+
+#numbers {
+	background-color: #ddd;
+	text-align: center;
+
 }
