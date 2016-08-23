@@ -23,7 +23,7 @@
 
 	<div id = "numbers">
 		<h1 class = "">The number to match is: <span id = "random">39</span></h1>
-		<h1 class = "">User score: <span id="user"> </span></h1>
+		<h1 class = "">User score:<span id="user"></span></h1>
 	</div>
 	<div id = "scoreboard">
 		<h1 id = "wins">Wins:</h1>
@@ -35,25 +35,43 @@
 
 
 $(document).ready(function() {
-	var computerNumber = Math.floor((Math.random()*120) + 19);
+	var computerNumber = Math.floor((Math.random()*120) + 1);
 	var userScore = 0;
-	var clickCrystal = Math.floor((Math.random()*12) + 1);
-	var crystals = ["yellow", "blue", "green", "red"];
+	var crystal1 = Math.floor((Math.random()*12) + 1);
+	var crystal2 = Math.floor((Math.random()*12) + 1);
+	var crystal3 = Math.floor((Math.random()*12) + 1);
+	var crystal4 = Math.floor((Math.random()*12) + 1);
+	
+	//assign randomly to each crystal
 
 
 	$("#random").text(computerNumber);
 
-	for (i=0; i<crystals.length; i++) {
-		var crystal = "#" + crystals[i]
-		$(crystal).data('value', Math.floor(Math.random()*12) +1);
-		$("#user").text(userScore);
-		// userScore = userScore + Math.floor((Math.random()*12) + 1);
+	$("#yellow").on("click", function() {
+		var userScore = 0;
+		$("#user").text(crystal1);
+		userScore = userScore + crystal1;
 
-	}
-	// start a game, get a random number for targetScore
+	});
+
+	$("#blue").on("click", function() {
+		$("#user").text(crystal2);
+		userScore = userScore + crystal2;
+
+});
+
+	$("#green").on("click", function() {
+		$("#user").text(crystal3);
+		userScore = userScore + crystal3;
+	})
+
+
+	$("#red").on("click", function() {
+		$("#user").text(crystal4);
+		userScore = userScore + crystal4;
+	})
+
 });
 
 </script>
-
-
 </html>
