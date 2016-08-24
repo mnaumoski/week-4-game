@@ -1,6 +1,8 @@
+var beforeStart = alert("Welcome to Crystals Collector. Are you ready to play?");
+
 $( document ).ready(function() {
 
-	var numberToGuess = 53;
+	var numberToGuess = Math.floor(Math.random()*120 + 19);
 	var counter = 0;
 	var numbers = [10, 5, 3, 7];
 	var win = 0;
@@ -29,17 +31,20 @@ $( document ).ready(function() {
 			if (counter == numberToGuess) {
 				alert('Congratulations! You won!');
 				win++;
-				$("#wins").append(win);
+				$("#wins").text(win);
 				$("#yourNumber").empty(); 
 				counter = 0;
+				numberToGuess = Math.floor(Math.random()*120 + 19);//there has to be a better way than this...
+				$("#number").text(numberToGuess);
 			}
 			else if (counter > numberToGuess) {
 				alert('You lost!'); 
 				loss++;
-				$("#losses").append(loss);
+				$("#losses").text(loss);
 				$("#yourNumber").empty(); 
 				counter = 0;//this should be here; once I make the array a random number
-				
+				numberToGuess = Math.floor(Math.random()*120 + 19);// this might not be DRY
+				$("#number").text(numberToGuess);
 		};
 	});
 });
