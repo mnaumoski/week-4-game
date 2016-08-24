@@ -2,7 +2,7 @@ var beforeStart = alert("Welcome to Crystals Collector. Are you ready to play?")
 
 $( document ).ready(function() {
 
-	var numberToGuess = Math.floor(Math.random() * 100) + 19; //(max - min +1) + min
+	var numberToGuess = Math.floor(Math.random() * 100) + 19;//(max - min +1) + min
 	var counter = 0;
 	var colors = ["blue", "green", "red", "pink"];
 	var win = 0;
@@ -16,14 +16,15 @@ $( document ).ready(function() {
 			
 			var clickCrystal = colors[i]+".jpeg";
 
-			imageCrystal.attr('data-num', colors[i]);
+			// imageCrystal.attr('data-num', colors[i]);
 
 			imageCrystal.attr('src', clickCrystal);
 
 			imageCrystal.attr('alt', 'crystals');
 			
 			imageCrystal.addClass('crystalImage');
-			img.src("data-value", Math.floor(Math.random()));
+			
+			imageCrystal.attr("data-value", Math.floor(Math.random()*12) + 1);
 			
 			$('#crystals').append(imageCrystal);		
 	}
