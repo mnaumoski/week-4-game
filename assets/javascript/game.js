@@ -4,21 +4,26 @@ $( document ).ready(function() {
 
 	var numberToGuess = Math.floor(Math.random() * 100) + 19; //(max - min +1) + min
 	var counter = 0;
-	var numbers = [10, 5, 3, 7];
+	var colors = ["blue", "green", "red", "pink"];
 	var win = 0;
 	var loss = 0;
 
 	$("#number").text(numberToGuess);
 
-	for (var i = 0; i < numbers.length; i++) {
+	for (var i = 0; i < colors.length; i++) {
 		
 			var imageCrystal = $('<img>'); //variable that addresses <img> in html; this is different than .crystalImage that represents a class
 			
-			imageCrystal.attr('data-num', numbers[i]);
+			var clickCrystal = colors[i]+".jpeg";
 
-			imageCrystal.attr('src', 'assets/images/red.jpeg');
+			imageCrystal.attr('data-num', colors[i]);
+
+			imageCrystal.attr('src', clickCrystal);
+
 			imageCrystal.attr('alt', 'crystals');
+			
 			imageCrystal.addClass('crystalImage');
+			img.src("data-value", Math.floor(Math.random()));
 			
 			$('#crystals').append(imageCrystal);		
 	}
@@ -34,7 +39,7 @@ $( document ).ready(function() {
 				$("#wins").text(win);
 				$("#yourNumber").empty(); 
 				counter = 0;
-				numberToGuess = Math.floor(Math.random()*120 + 19);//there has to be a better way than this...
+				numberToGuess = Math.floor(Math.random()*100) + 19;//there has to be a better way than this...
 				$("#number").text(numberToGuess);
 			}
 			else if (counter > numberToGuess) {
@@ -43,7 +48,7 @@ $( document ).ready(function() {
 				$("#losses").text(loss);
 				$("#yourNumber").empty(); 
 				counter = 0;//this should be here; once I make the array a random number
-				numberToGuess = Math.floor(Math.random()*120 + 19);// this might not be DRY
+				numberToGuess = Math.floor(Math.random()*100) + 19;// this might not be DRY
 				$("#number").text(numberToGuess);
 		};
 	});
