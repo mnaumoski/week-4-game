@@ -2,7 +2,7 @@ var beforeStart = alert("Welcome to Crystals Collector. Are you ready to play?")
 
 $( document ).ready(function() {
 
-	var numberToGuess = Math.floor(Math.random()*120 + 19);
+	var numberToGuess = Math.floor(Math.random() * 100) + 19; //(max - min +1) + min
 	var counter = 0;
 	var numbers = [10, 5, 3, 7];
 	var win = 0;
