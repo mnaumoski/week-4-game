@@ -30,7 +30,7 @@ $( document ).ready(function() {
 	}
 
 	$(".crystalImage").on("click", function(){
-			counter=counter+parseInt($(this).data('num'));// Need to understand this better; this.data('num')
+			counter=counter+parseInt($(this).data('value'));// Need to understand this better; this.data('num')
 		
 			$("#yourNumber").text(counter);
 
