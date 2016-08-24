@@ -1,26 +1,26 @@
-.crystalImage {
-
-}
-
 
 #crystals {
 	text-align: center;
 	height: 200px;
-
-
 }
 
 #numbers {
 	background-color: #ddd;
 	text-align: center;
+	width: 70%;
+	float: left;
 
 }
 
 #scoreboard {
+	background: #fdfd96;
+	width: 30%;
+	float: right;
 	text-align: center;
 }
+
 img {
 
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 }
