@@ -10,26 +10,35 @@ $( document ).ready(function() {
 
 	$("#number").text(numberToGuess);
 
-	for (var i = 0; i < colors.length; i++) {
-		
-			var imageCrystal = $('<img>'); //variable that addresses <img> in html; this is different than .crystalImage that represents a class
-			
-			var clickCrystal = colors[i]+".jpeg";
+	function createCrystals(){
+		$('#crystals').empty();
 
-			// imageCrystal.attr('data-num', colors[i]);
+		for (var i = 0; i < colors.length; i++) {
+			
 
-			imageCrystal.attr('src', clickCrystal);
 
-			imageCrystal.attr('alt', 'crystals');
-			
-			imageCrystal.addClass('crystalImage');
-			
-			imageCrystal.attr("data-value", Math.floor(Math.random()*12) + 1);
-			
-			$('#crystals').append(imageCrystal);		
+				var imageCrystal = $('<img>'); //variable that addresses <img> in html; this is different than .crystalImage that represents a class
+				
+				var clickCrystal = colors[i]+".jpeg";
+
+				// imageCrystal.attr('data-num', colors[i]);
+
+				imageCrystal.attr('src', clickCrystal);
+
+				imageCrystal.attr('alt', 'crystals');
+				
+				imageCrystal.addClass('crystalImage');
+
+				imageCrystal.attr("data-value", Math.floor(Math.random()*12) + 1);
+				
+				$('#crystals').append(imageCrystal);
+
+		}		
 	}
+	
+	createCrystals();
 
-	$(".crystalImage").on("click", function(){
+	$(document).on("click", ".crystalImage", function(){
 			counter=counter+parseInt($(this).data('value'));// Need to understand this better; this.data('num')
 		
 			$("#yourNumber").text(counter);
@@ -42,6 +51,10 @@ $( document ).ready(function() {
 				counter = 0;
 				numberToGuess = Math.floor(Math.random()*100) + 19;//there has to be a better way than this...
 				$("#number").text(numberToGuess);
+				createCrystals();
+				
+
+
 			}
 			else if (counter > numberToGuess) {
 				alert('You lost!'); 
@@ -51,6 +64,16 @@ $( document ).ready(function() {
 				counter = 0;//this should be here; once I make the array a random number
 				numberToGuess = Math.floor(Math.random()*100) + 19;// this might not be DRY
 				$("#number").text(numberToGuess);
+				createCrystals();
+			
 		};
 	});
-});
+
+	//  $("#restart")on("click", function () {
+	// 	location.reload();
+	// });
+
+
+	});
+
+	 
