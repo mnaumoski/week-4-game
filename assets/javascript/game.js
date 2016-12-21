@@ -19,7 +19,7 @@ $(document).ready(function() {
 
             var imageCrystal = $('<img>'); //variable that addresses <img> in html; this is different than .crystalImage that represents a class
 
-            var clickCrystal = colors[i] + ".jpeg";
+            var clickCrystal = colors[i] + ".png";
 
             // imageCrystal.attr('data-num', colors[i]);
 

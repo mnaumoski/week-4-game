@@ -1,7 +1,7 @@
 
 #crystals {
 	text-align: center;
-	min-height: 200px;
+	min-height: 150px;
 }
 
 #numbers {
@@ -9,6 +9,7 @@
 	text-align: center;
 	width: 70%;
 	float: left;
+	border-radius: 20px;
 
 }
 
@@ -17,6 +18,7 @@
 	width: 30%;
 	float: right;
 	text-align: center;
+	border-radius: 20px;
 
 }
 #oneMoreTry {
@@ -34,4 +36,12 @@ img {
 
 	height: 125px;
 	width: 125px;
+}
+
+h1 {
+	font-family: 'Lobster Two', cursive;
+}
+
+body {
+	background-image: url('wood.png')
 }
